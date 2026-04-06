@@ -124,9 +124,9 @@ h1.name .last{display:block;color:transparent;-webkit-text-stroke:1.5px var(--li
 /* CONTACT */
 .contact-intro{font-size:18px;color:var(--text2);max-width:500px;line-height:1.8;font-weight:300;margin-bottom:3rem}
 .contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.contact-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:2rem;text-decoration:none;display:flex;flex-direction:column;gap:8px;transition:border-color 0.3s,background 0.3s,transform 0.3s;position:relative;overflow:hidden;z-index:1;cursor:pointer}
-.contact-card::before{content:'';position:absolute;inset:0;background:rgba(200,240,96,0.04);opacity:0;transition:opacity 0.3s;pointer-events:none;z-index:-1}
-.contact-card:hover{border-color:rgba(200,240,96,0.4);transform:translateY(-4px)}
+.contact-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:2rem;text-decoration:none;display:flex;flex-direction:column;gap:8px;transition:border-color 0.3s,background 0.3s,transform 0.3s;position:relative;overflow:hidden;z-index:1;cursor:pointer;pointer-events:auto}
+.contact-card::before{content:'';position:absolute;inset:0;background:transparent;opacity:0;transition:opacity 0.3s;pointer-events:none;z-index:0}
+.contact-card:hover{border-color:rgba(200,240,96,0.4);transform:translateY(-4px);background:rgba(200,240,96,0.02)}
 .contact-card:hover::before{opacity:1}
 .contact-card-label{font-family:var(--mono);font-size:10px;color:var(--text3);letter-spacing:0.12em;text-transform:uppercase;position:relative;z-index:1}
 .contact-card-icon{font-size:22px;margin-bottom:4px;position:relative;z-index:1}
@@ -179,7 +179,7 @@ footer{padding:2.5rem 5vw;border-top:1px solid var(--border);display:flex;justif
 <section id="hero">
   <div class="hero-content">
     <div class="reveal">
-      <p class="hero-eyebrow"><span class="hero-dot"></span>Data Scientist and AI Engineer</p>
+      <p class="hero-eyebrow"><span class="hero-dot"></span>Junior Data Scientist and AI/ML Enthusiast</p>
       <h1 class="name">
         <span class="first">Ameer</span>
         <span class="last">Abdullah</span>
