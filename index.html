@@ -254,4 +254,892 @@
 
     .section-eyebrow {
       font-family: var(--font-mono);
-      font-size
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 3vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* ===== PROJECTS ===== */
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .project-meta {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .project-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      display: inline-block;
+      transition: color 0.2s ease;
+    }
+
+    .project-title:hover {
+      color: var(--accent);
+    }
+
+    .project-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .project-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .metric-box {
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+
+    .metric-val {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .metric-label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .project-media {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .video-thumb {
+      position: relative;
+      display: block;
+      aspect-ratio: 16 / 9;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #111827;
+    }
+
+    .video-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .video-thumb:hover img {
+      transform: scale(1.02);
+    }
+
+    .play-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(17, 24, 39, 0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.2s ease;
+    }
+
+    .video-thumb:hover .play-overlay {
+      background: rgba(17, 24, 39, 0.4);
+    }
+
+    .play-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      padding-left: 3px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .tags-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    /* ===== SKILLS ===== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .skill-group {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .skill-group-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-pill {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: var(--surface-subtle);
+      border: 1px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 6px;
+    }
+
+    /* ===== EXPERIENCE ===== */
+    .experience-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .exp-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .exp-period {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      padding-top: 4px;
+    }
+
+    .exp-role {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .exp-org {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .exp-points {
+      list-style: disc;
+      padding-left: 18px;
+      color: var(--text-secondary);
+      font-size: 0.93rem;
+    }
+
+    .exp-points li + li {
+      margin-top: 6px;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact-intro {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin-bottom: 32px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+
+    .contact-card:hover {
+      border-color: var(--text);
+      background-color: var(--surface);
+    }
+
+    .contact-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .contact-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+    }
+
+    .contact-val {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text);
+      word-break: break-word;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-name {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .project-card {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .status-badge {
+        display: none;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 16px 24px;
+        gap: 14px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      #hero {
+        padding: 56px 0 48px;
+      }
+
+      section.section {
+        padding: 52px 0;
+      }
+
+      .project-card {
+        padding: 20px;
+      }
+
+      .project-metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .exp-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-cta .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container nav-inner">
+      <a href="#hero" class="nav-logo">Ameer Abdullah</a>
+
+      <nav aria-label="Primary">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <span class="status-badge">
+        <span class="status-dot"></span>
+        Open to work
+      </span>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="hero">
+      <div class="container">
+        <p class="hero-eyebrow">Junior Data Scientist &amp; AI/ML Engineer</p>
+        <h1 class="hero-name">Ameer Abdullah</h1>
+        <p class="hero-bio">
+          Fresh Data Science graduate from FAST NUCES, Lahore. I build intelligent systems, multi-agent LLMs, RAG pipelines, and explainable ML designed to work reliably in production.
+        </p>
+
+        <div class="hero-cta">
+          <a href="https://github.com/RichieDatalyst" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <i class="fa-brands fa-github"></i> GitHub
+          </a>
+          <a href="https://linkedin.com/in/ameer-abdullah-bhatti-502955294" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="mailto:abdullahameer255@gmail.com" class="btn btn-secondary">
+            <i class="fa-solid fa-envelope"></i> Email me
+          </a>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-value">3</div>
+            <div class="stat-title">Major projects shipped</div>
+            <div class="stat-sub">All with live demos</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">97%</div>
+            <div class="stat-title">Model accuracy</div>
+            <div class="stat-sub">Snake pathfinding agent</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">4.5M</div>
+            <div class="stat-title">Training steps processed</div>
+            <div class="stat-sub">Across 6 ML models</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">100%</div>
+            <div class="stat-title">Test pass rate</div>
+            <div class="stat-sub">PetNutriCare FYP</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">01 / Work</p>
+          <h2 class="section-title">Selected projects</h2>
+        </div>
+
+        <div class="projects-list">
+          <!-- Project 1 -->
+          <article class="project-card">
+            <div>
+              <p class="project-meta">Final Year Project · 2025</p>
+              <a href="https://github.com/RichieDatalyst/PetNutriCare-FYP-Video-Demo" target="_blank" rel="noopener noreferrer" class="project-title">
+                PetNutriCare
+              </a>
+              <p class="project-desc">
+                An AI-powered nutrition system that generates personalized meal plans for pets and farm animals. Uses NLP to extract health insights from unstructured veterinary records, then delivers transparent recommendations backed by SHAP and LIME so users can see why each food was chosen.
+              </p>
+
+              <div class="project-metrics">
+                <div class="metric-box">
+                  <span class="metric-val">100%</span>
+                  <span class="metric-label">Test pass rate across 10 modules</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-val">0%</span>
+                  <span class="metric-label">Defect density on final build</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-val">Gemini</span>
+                  <span class="metric-label">API chatbot for real-time guidance</span>
+                </div>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://github.com/RichieDatalyst/PetNutriCare-FYP-Video-Demo" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                  View on GitHub <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i>
+                </a>
+                <a href="https://www.youtube.com/watch?v=GWZsPSjmgyg" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  Watch demo
+                </a>
+              </div>
+            </div>
+
+            <div class="project-media">
+              <a href="https://www.youtube.com/watch?v=GWZsPSjmgyg" target="_blank" rel="noopener noreferrer" class="video-thumb" aria-label="Watch PetNutriCare demo on YouTube">
+                <img src="https://img.youtube.com/vi/GWZsPSjmgyg/maxresdefault.jpg" alt="PetNutriCare Demo Thumbnail" loading="lazy">
+                <span class="play-overlay">
+                  <span class="play-circle"><i class="fa-solid fa-play"></i></span>
+                </span>
+              </a>
+              <div>
+                <p class="tags-label">Built with</p>
+                <div class="tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">FastAPI</span>
+                  <span class="tag">Gemini API</span>
+                  <span class="tag">NLP</span>
+                  <span class="tag">SHAP</span>
+                  <span class="tag">LIME</span>
+                  <span class="tag">Explainable AI</span>
+                  <span class="tag">Machine Learning</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <div>
+              <p class="project-meta">Research Tool · 2024</p>
+              <a href="https://github.com/RichieDatalyst/ScholarGraph" target="_blank" rel="noopener noreferrer" class="project-title">
+                ScholarGraph
+              </a>
+              <p class="project-desc">
+                A multi-agent LLM system built with LangGraph that reads and analyzes scientific papers. Adapts output to three reading levels and includes a built-in hallucination detector, multi-dimensional quality scoring, and a conversational RAG chatbot for querying papers directly.
+              </p>
+
+              <div class="project-metrics">
+                <div class="metric-box">
+                  <span class="metric-val">4+</span>
+                  <span class="metric-label">LLM providers with fallback routing</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-val">3</span>
+                  <span class="metric-label">Adaptive summarization levels</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-val">FAISS</span>
+                  <span class="metric-label">Local vector search, no external APIs</span>
+                </div>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://github.com/RichieDatalyst/ScholarGraph" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                  View on GitHub <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i>
+                </a>
+                <a href="https://www.youtube.com/watch?v=0JbsiVpIXmk" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  Watch demo
+                </a>
+              </div>
+            </div>
+
+            <div class="project-media">
+              <a href="https://www.youtube.com/watch?v=0JbsiVpIXmk" target="_blank" rel="noopener noreferrer" class="video-thumb" aria-label="Watch ScholarGraph demo on YouTube">
+                <img src="https://img.youtube.com/vi/0JbsiVpIXmk/maxresdefault.jpg" alt="ScholarGraph Demo Thumbnail" loading="lazy">
+                <span class="play-overlay">
+                  <span class="play-circle"><i class="fa-solid fa-play"></i></span>
+                </span>
+              </a>
+              <div>
+                <p class="tags-label">Built with</p>
+                <div class="tags">
+                  <span class="tag">LangGraph</span>
+                  <span class="tag">LangChain</span>
+                  <span class="tag">FAISS</span>
+                  <span class="tag">RAG</span>
+                  <span class="tag">Gemini</span>
+                  <span class="tag">Groq</span>
+                  <span class="tag">Cohere</span>
+                  <span class="tag">Edge-TTS</span>
+                  <span class="tag">Streamlit</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card">
+            <div>
+              <p class="project-meta">ML Research · 2024</p>
+              <a href="https://github.com/RichieDatalyst/Neuro-Sentinel-Snake" target="_blank" rel="noopener noreferrer" class="project-title">
+                Neuro Sentinel Snake
+              </a>
+              <p class="project-desc">
+                An end-to-end ML system that audits AI pathfinding agents playing Snake. Six models trained on 4.5 million game steps predict and explain agent decisions. SHAP explainability uncovered a 39% performance drift in the A* algorithm—the kind of silent failure that breaks models in production.
+              </p>
+
+              <div class="project-metrics">
+                <div class="metric-box">
+                  <span class="metric-val">97%</span>
+                  <span class="metric-label">Action prediction accuracy</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-val">39%</span>
+                  <span class="metric-label">Performance drift diagnosed in A*</span>
+                </div>
+                <div class="metric-box">
+                  <span class="metric-val">MLflow</span>
+                  <span class="metric-label">Experiment tracking &amp; CI/CD</span>
+                </div>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://github.com/RichieDatalyst/Neuro-Sentinel-Snake" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                  View on GitHub <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i>
+                </a>
+                <a href="https://www.youtube.com/watch?v=XKWMQ6UCb3Q" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                  Watch demo
+                </a>
+              </div>
+            </div>
+
+            <div class="project-media">
+              <a href="https://www.youtube.com/watch?v=XKWMQ6UCb3Q" target="_blank" rel="noopener noreferrer" class="video-thumb" aria-label="Watch Neuro Sentinel Snake demo on YouTube">
+                <img src="https://img.youtube.com/vi/XKWMQ6UCb3Q/maxresdefault.jpg" alt="Neuro Sentinel Snake Demo Thumbnail" loading="lazy">
+                <span class="play-overlay">
+                  <span class="play-circle"><i class="fa-solid fa-play"></i></span>
+                </span>
+              </a>
+              <div>
+                <p class="tags-label">Built with</p>
+                <div class="tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">A* / BFS / GBFS</span>
+                  <span class="tag">SHAP</span>
+                  <span class="tag">Scikit-learn</span>
+                  <span class="tag">MLflow</span>
+                  <span class="tag">GitHub Actions</span>
+                  <span class="tag">Streamlit</span>
+                  <span class="tag">Tkinter</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">02 / Capabilities</p>
+          <h2 class="section-title">Skills</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3 class="skill-group-title">Languages</h3>
+            <div class="skill-list">
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">SQL</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-group-title">AI &amp; Machine Learning</h3>
+            <div class="skill-list">
+              <span class="skill-pill">LLMs &amp; Generative AI</span>
+              <span class="skill-pill">Machine Learning</span>
+              <span class="skill-pill">Natural Language Processing</span>
+              <span class="skill-pill">Deep Learning</span>
+              <span class="skill-pill">Explainable AI</span>
+              <span class="skill-pill">RAG Pipelines</span>
+              <span class="skill-pill">Data Mining</span>
+              <span class="skill-pill">Data Analysis</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3 class="skill-group-title">Frameworks &amp; Tools</h3>
+            <div class="skill-list">
+              <span class="skill-pill">LangChain &amp; LangGraph</span>
+              <span class="skill-pill">FastAPI</span>
+              <span class="skill-pill">Streamlit</span>
+              <span class="skill-pill">PyTorch</span>
+              <span class="skill-pill">Scikit-learn</span>
+              <span class="skill-pill">Power BI</span>
+              <span class="skill-pill">MLflow</span>
+              <span class="skill-pill">FAISS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience & Education -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">03 / Background</p>
+          <h2 class="section-title">Experience &amp; education</h2>
+        </div>
+
+        <div class="experience-list">
+          <div class="exp-item">
+            <div class="exp-period">Fall 2025<br>Lahore, PK</div>
+            <div>
+              <h3 class="exp-role">Teaching Assistant, Information Security</h3>
+              <span class="exp-org">FAST NUCES</span>
+              <ul class="exp-points">
+                <li>Mentored over 50 students in Information Security, covering cryptography, access control, and security vulnerabilities.</li>
+                <li>Designed and graded assignments to build security awareness and analytical thinking.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-period">Jun 2025 – Jul 2025<br>Lahore, PK</div>
+            <div>
+              <h3 class="exp-role">AI and Data Science Intern</h3>
+              <span class="exp-org">Netsol Technologies</span>
+              <ul class="exp-points">
+                <li>Researched and compared data monitoring tools, preparing a structured evaluation to support engineering decisions around system observability.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-period">2021 – 2025<br>Lahore, PK</div>
+            <div>
+              <h3 class="exp-role">Bachelor of Science in Data Science</h3>
+              <span class="exp-org">FAST NUCES</span>
+              <ul class="exp-points">
+                <li>Studied Machine Learning, Deep Learning, NLP, Database Systems, Data Mining, and Information Security.</li>
+                <li>Final year project achieved a 100% test case pass rate across all functional modules.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-period">2019 – 2021<br>Lahore, PK</div>
+            <div>
+              <h3 class="exp-role">A-Levels</h3>
+              <span class="exp-org">LGS Lahore</span>
+              <ul class="exp-points">
+                <li>Cambridge International A-Levels.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-period">2016 – 2019<br>Lahore, PK</div>
+            <div>
+              <h3 class="exp-role">O-Levels</h3>
+              <span class="exp-org">LACAS Lahore</span>
+              <ul class="exp-points">
+                <li>Cambridge International O-Levels.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-eyebrow">04 / Connect</p>
+          <h2 class="section-title">Get in touch</h2>
+        </div>
+
+        <p class="contact-intro">
+          I am actively looking for my first full-time role in data science, machine learning, or related domains. If you are hiring or want to discuss a project, reach out through any of the channels below.
+        </p>
+
+        <div class="contact-grid">
+          <a href="mailto:abdullahameer255@gmail.com" class="contact-card">
+            <div class="contact-top">
+              <i class="fa-solid fa-envelope"></i>
+              <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.8rem;"></i>
+            </div>
+            <span class="contact-label">Email</span>
+            <span class="contact-val">abdullahameer255@gmail.com</span>
+          </a>
+
+          <a href="https://wa.me/923117494501" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="contact-top">
+              <i class="fa-brands fa-whatsapp"></i>
+              <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.8rem;"></i>
+            </div>
+            <span class="contact-label">WhatsApp</span>
+            <span class="contact-val">+92 311 749 4501</span>
+          </a>
+
+          <a href="https://linkedin.com/in/ameer-abdullah-bhatti-502955294" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="contact-top">
+              <i class="fa-brands fa-linkedin"></i>
+              <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.8rem;"></i>
+            </div>
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-val">ameer-abdullah-bhatti</span>
+          </a>
+
+          <a href="https://github.com/RichieDatalyst" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="contact-top">
+              <i class="fa-brands fa-github"></i>
+              <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.8rem;"></i>
+            </div>
+            <span class="contact-label">GitHub</span>
+            <span class="contact-val">RichieDatalyst</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span class="footer-name">Ameer Abdullah</span>
+      <span>Lahore, Pakistan · 2025</span>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('active');
+      navToggle.setAttribute('aria-expanded', isOpen);
+      navToggle.innerHTML = isOpen
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      });
+    });
+  </script>
+</body>
+</html>
